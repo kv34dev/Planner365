@@ -61,7 +61,3 @@ open Planner.xcodeproj
 - Dark mode support
 
 - Widget for quick timer access
-
-## 📄 License
-
-This project is released under the MIT License.
