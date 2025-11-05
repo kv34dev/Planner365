@@ -3,7 +3,7 @@
 **Planner** is an iOS application built with **SwiftUI**, designed to help users organize their daily life efficiently.  
 It combines a clean interface with practical tools for scheduling, note-taking, and time tracking — all in one minimalist app.
 
----
+![screenshot](https://github.com/user-attachments/assets/1487b351-e06c-4d86-b7bd-c080a249564c)
 
 ## ✨ Features
 
