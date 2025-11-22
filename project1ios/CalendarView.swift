@@ -256,7 +256,7 @@ struct MonthYearPicker: View {
 
                 Spacer()
             }
-            .navigationTitle("Select Month")
+            .navigationTitle("Select Date")
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") {
