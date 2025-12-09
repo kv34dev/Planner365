@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planner365 - Your Ultimate Time Management App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #4A90E2;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .features {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #2c3e50;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #4A90E2;
+        }
+
+        .screenshots {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .screenshots-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .screenshot-card {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+        }
+
+        .screenshot-card h3 {
+            margin-bottom: 15px;
+            color: #4A90E2;
+        }
+
+        .screenshot-card p {
+            color: #666;
+        }
+
+        .contact-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4A90E2;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-button {
+            background: #4A90E2;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            background: #357ABD;
+        }
+
+        .privacy-section {
+            padding: 80px 0;
+        }
+
+        .privacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .privacy-content h2 {
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .privacy-content p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .success-message {
+            display: none;
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Planner365</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#screenshots">Screenshots</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#privacy">Privacy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Welcome to Planner365</h1>
+            <p>Your ultimate companion for time management, note-taking, and staying organized</p>
+            <a href="#features" class="cta-button">Discover Features</a>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Everything You Need to Stay Organized</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Smart Timers</h3>
+                    <p>Create countdowns for important events, track time until special dates, and never miss a deadline with customizable timers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Quick Notes</h3>
+                    <p>Capture your thoughts instantly with our intuitive notes feature. Organize ideas, tasks, and reminders all in one place.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3>Personal Calendar</h3>
+                    <p>Visualize your schedule with a clean, easy-to-use calendar. Track events, deadlines, and important dates effortlessly.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧮</div>
+                    <h3>Time Calculator</h3>
+                    <p>Add, subtract, and calculate time durations with precision. Perfect for planning projects and managing your schedule.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Smart Reminders</h3>
+                    <p>Set reminders for tasks and events. Get notified at the right time so you never forget what matters most.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Track Everything</h3>
+                    <p>Monitor your progress and productivity. See how you spend your time and optimize your daily routine.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="screenshots" class="screenshots">
+        <div class="container">
+            <h2 class="section-title">See Planner365 in Action</h2>
+            <div class="screenshots-container">
+                <div class="screenshot-card">
+                    <h3>⏱️ Timers & Countdowns</h3>
+                    <p>Track multiple timers simultaneously for all your important events and deadlines.</p>
+                </div>
+                <div class="screenshot-card">
+                    <h3>📓 Notes Management</h3>
+                    <p>Keep all your notes organized with timestamps and easy access to everything you need.</p>
+                </div>
+                <div class="screenshot-card">
+                    <h3>🗓️ Calendar View</h3>
+                    <p>Beautiful calendar interface showing your events and tasks at a glance.</p>
+                </div>
+                <div class="screenshot-card">
+                    <h3>⚡ Time Calculator</h3>
+                    <p>Calculate time durations quickly and accurately for better time management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Support</h2>
+            <div class="contact-form">
+                <div id="successMessage" class="success-message">
+                    Thank you for your message! We'll get back to you soon.
+                </div>
+                <form id="contactForm" action="https://formspree.io/f/xdkqlvrk" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="privacy" class="privacy-section">
+        <div class="container">
+            <div class="privacy-content">
+                <h1 class="section-title">Privacy Policy</h1>
+                <p><strong>Last Updated: December 9, 2025</strong></p>
+
+                <h2>1. Introduction</h2>
+                <p>Welcome to Planner365. We respect your privacy and are committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you use our application.</p>
+
+                <h2>2. Information We Collect</h2>
+                <p>We collect information that you provide directly to us, including:</p>
+                <p>• Account information (name, email address)</p>
+                <p>• Notes, timers, and calendar events you create</p>
+                <p>• Usage data and preferences</p>
+                <p>• Device information and log data</p>
+
+                <h2>3. How We Use Your Information</h2>
+                <p>We use the information we collect to:</p>
+                <p>• Provide, maintain, and improve our services</p>
+                <p>• Send you notifications and reminders</p>
+                <p>• Respond to your support requests</p>
+                <p>• Analyze usage patterns to enhance user experience</p>
+
+                <h2>4. Data Storage and Security</h2>
+                <p>Your data is stored securely using industry-standard encryption. We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
+
+                <h2>5. Data Sharing</h2>
+                <p>We do not sell, trade, or rent your personal information to third parties. We may share your information only:</p>
+                <p>• With your consent</p>
+                <p>• To comply with legal obligations</p>
+                <p>• To protect our rights and safety</p>
+
+                <h2>6. Your Rights</h2>
+                <p>You have the right to:</p>
+                <p>• Access your personal data</p>
+                <p>• Correct inaccurate data</p>
+                <p>• Request deletion of your data</p>
+                <p>• Export your data</p>
+                <p>• Opt-out of marketing communications</p>
+
+                <h2>7. Children's Privacy</h2>
+                <p>Our service is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13.</p>
+
+                <h2>8. Changes to This Policy</h2>
+                <p>We may update this privacy policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "Last Updated" date.</p>
+
+                <h2>9. Contact Us</h2>
+                <p>If you have any questions about this privacy policy or our practices, please contact us using the support form above or email us at 1@vladimirkudryashov.com</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Planner365. All rights reserved.</p>
+            <p>Made with ❤️ for better productivity</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
