@@ -1,4 +1,4 @@
-# Planner — Productivity & Time Management App
+# Planner365 — Productivity & Time Management App
 
 **Planner** is an iOS application built with **SwiftUI**, designed to help users organize their daily life efficiently.  
 It combines a clean interface with practical tools for scheduling, note-taking, and time tracking — all in one minimalist app.
