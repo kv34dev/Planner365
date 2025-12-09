@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="favicon.jpeg">
     <title>Planner365 - Your Ultimate Time Management App</title>
     <style>
         * {
@@ -266,18 +267,207 @@
             text-align: center;
         }
 
-        @media (max-width: 768px) {
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        /* Tablet screens */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 30px;
+            }
+
             .hero h1 {
-                font-size: 32px;
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .screenshots-container {
+                gap: 20px;
+            }
+
+            .screenshot-card {
+                min-width: 200px;
+            }
+        }
+
+        /* Mobile screens */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
             }
 
             .nav-links {
-                gap: 15px;
-                font-size: 14px;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: #357ABD;
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                display: none;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+                line-height: 1.2;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .features {
+                padding: 50px 0;
             }
 
             .features-grid {
                 grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .screenshots {
+                padding: 50px 0;
+            }
+
+            .screenshots-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .screenshot-card {
+                max-width: 100%;
+            }
+
+            .contact-section {
+                padding: 50px 0;
+            }
+
+            .contact-form {
+                padding: 25px;
+            }
+
+            .privacy-section {
+                padding: 50px 0;
+            }
+
+            .privacy-content h1 {
+                font-size: 28px;
+            }
+
+            .privacy-content h2 {
+                font-size: 22px;
+            }
+        }
+
+        /* Small mobile screens */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            .hero h1 {
+                font-size: 26px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .feature-card {
+                padding: 20px;
+            }
+
+            .feature-icon {
+                font-size: 36px;
+            }
+
+            .feature-card h3 {
+                font-size: 20px;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                font-size: 14px;
+            }
+
+            .submit-button {
+                font-size: 16px;
+                padding: 12px 30px;
+            }
+
+            .privacy-content {
+                font-size: 14px;
+            }
+        }
+
+        /* Large desktop screens */
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1400px;
+            }
+
+            .hero h1 {
+                font-size: 56px;
+            }
+
+            .hero p {
+                font-size: 24px;
+            }
+
+            .section-title {
+                font-size: 42px;
             }
         }
     </style>
@@ -484,7 +674,7 @@
                 alert('There was a problem sending your message. Please try again.');
             });
         });
-        
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
