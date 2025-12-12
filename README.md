@@ -5,7 +5,10 @@ It combines a clean interface with practical tools for scheduling, note-taking, 
 
 ![screenshot](https://github.com/user-attachments/assets/1487b351-e06c-4d86-b7bd-c080a249564c)
 
-# Now avaliable on the [AppStore](https://apps.apple.com/us/app/planner365/id6756027832) (except in the EU)
+# Now avaliable on the AppStore (except in the EU)
+<a href="https://apps.apple.com/us/app/planner365/id6756027832" target="_blank">
+<img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" style="width: 200px;">
+</a>
 
 ## ✨ Features
 
