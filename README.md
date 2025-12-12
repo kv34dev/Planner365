@@ -5,6 +5,8 @@ It combines a clean interface with practical tools for scheduling, note-taking, 
 
 ![screenshot](https://github.com/user-attachments/assets/1487b351-e06c-4d86-b7bd-c080a249564c)
 
+# Now avaliable on the [AppStore](https://apps.apple.com/us/app/planner365/id6756027832) (except in the EU)
+
 ## ✨ Features
 
 - **📅 Calendar** — browse and manage daily events  
@@ -13,16 +15,12 @@ It combines a clean interface with practical tools for scheduling, note-taking, 
 - **⚙️ Settings** — customize your app preferences  
 - **💡 Simple & Elegant UI** — inspired by Apple’s design philosophy  
 
----
-
 ## 🧩 Tech Stack
 
 - **Language:** Swift  
 - **Framework:** SwiftUI  
 - **Architecture:** MVVM-like structure  
 - **Platform:** iOS (Xcode project)  
-
----
 
 ## 📂 Project Structure
 ```
@@ -39,9 +37,6 @@ project1ios/
      ├── SettingsView.swift
      └── Assets.xcassets      # App icons & colors
 ```
-
-
----
 
 ## 🚀 Installation
 
